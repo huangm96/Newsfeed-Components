@@ -136,7 +136,8 @@ const articles=document.querySelector(".articles");
 data.forEach((data)=>{
   articles.appendChild(createArticle(data));
 });
-console.log(articles);
+
+
 function createArticle(data){
   const article = document.createElement("div");
   const title = document.createElement("h2");

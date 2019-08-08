@@ -34,37 +34,40 @@ let menuItems = [
   
 */
 const header =document.querySelector(".header");
-const menu = document.createElement("div");
-menu.classList.add ("menubox");
-header.appendChild(menu);
-
-menu.appendChild(createMenu(menuItems));
+header.appendChild(createMenu(menuItems));
 
 
 function createMenu(item){
   const menulist= document.createElement("div");
-  const menuUl=document.createElement("ul")
+  const menuUl=document.createElement("ul");
 
+  menulist.classList.add("menu");
   menulist.appendChild(menuUl);
-  
 
   item.forEach((e)=>{
-    const list = document.createElement("li");
+    let list = document.createElement("li");
     list.textContent= e;
     menuUl.appendChild(list);
   });
 
-  menulist.classList.add("menu");
-
   
+
   const menuButton = document.querySelector(".menu-button");
-  menuButton.addEventListener("click",()=>{
-    menulist.classList.toggle('menu--open');
-  });
-
   
-  
+  menuButton.addEventListener("click", () =>
+    menulist.classList.toggle('menu--open')
+  );
+ 
 return menulist;
-}
+};
 
-console.log(header);
+
+
+
+
+
+
+
+
+
+
